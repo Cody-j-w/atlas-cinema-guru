@@ -1,4 +1,5 @@
 import Logo from "./logo";
+import UserInfo from "./userInfo";
 
 export default function Header() {
     return (
@@ -8,7 +9,7 @@ export default function Header() {
             </div>
             <div className="flex flex-row ">
                 <div className="me-3 inline content-center">
-                    name goes here
+                    <UserInfo />
                 </div>
                 <div className="me-3 inline content-center">
                     <p className="">Logout goes here</p>
