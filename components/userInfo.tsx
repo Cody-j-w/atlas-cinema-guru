@@ -5,8 +5,8 @@ export default async function UserInfo() {
     if (!session?.user) return null;
 
     return (
-        <div>
-            {session.user.email}
+        <div className="text-[#00003c]">
+            Welcome, {session.user.email}
         </div>
     )
 }
