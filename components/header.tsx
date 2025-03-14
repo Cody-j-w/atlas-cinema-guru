@@ -1,5 +1,6 @@
 import Logo from "./logo";
 import UserInfo from "./userInfo";
+import Logout from "./logout";
 
 export default function Header() {
     return (
@@ -12,7 +13,7 @@ export default function Header() {
                     <UserInfo />
                 </div>
                 <div className="me-3 inline content-center">
-                    <p className="">Logout goes here</p>
+                    <Logout />
                 </div>
             </div>
         </div>
