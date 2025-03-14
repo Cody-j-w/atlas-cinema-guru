@@ -15,9 +15,9 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={`antialiased  bg-[#00003c] text-white`}>
+      <body className={`antialiased  bg-[#00003c] text-white min-h-screen`}>
         <Header />
-        <div className="flex justify-between">
+        <div className="flex justify-between min-h-screen">
           <Sidebar />
           {children}
         </div>
