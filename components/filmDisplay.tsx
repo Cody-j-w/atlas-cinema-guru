@@ -4,14 +4,19 @@ import FilmImage from "./filmImage";
 
 import PageButtons from "./pageButtons";
 
-export default async function FilmDisplay({ page }: { page: string }) {
+export default async function FilmDisplay({ page, minYear, maxYear, query, genres }: {
+    page: string,
+    minYear: string,
+    maxYear: string,
+    query: string,
+    genres: string[]
+}) {
     const session = await auth();
-    const genres = await fetchGenres()
-    const films = await fetchTitles(parseInt(page), 0, 2026, "", genres, session?.user?.email!!)
+    const films = await fetchTitles(parseInt(page), parseInt(minYear), parseInt(maxYear), query, genres, session?.user?.email!!)
     return (
         <div className="flex flex-wrap items-center justify-center min-h-screen h-full w-full">
             {films.map((film) => (
-                <FilmImage key={film.id} id={film.id} title={film.title} released={film.released} genre={film.genre} synopsis={film.synopsis} />
+                <FilmImage key={film.id} id={film.id} title={film.title} released={film.released} genre={film.genre} synopsis={film.synopsis} favorited={film.favorited} watchLater={film.watchLater} image={film.image} />
             ))}
             <PageButtons previousPage={parseInt(page) - 1} nextPage={parseInt(page) + 1} />
         </div>
