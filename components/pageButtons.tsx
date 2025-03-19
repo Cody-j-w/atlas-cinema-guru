@@ -6,7 +6,8 @@ import { useState } from "react"
 
 type buttonProps = {
     previousPage: number,
-    nextPage: number
+    nextPage: number,
+    nextPageContent: number
 }
 
 export default function PageButtons(props: buttonProps) {
@@ -25,9 +26,9 @@ export default function PageButtons(props: buttonProps) {
                 Previous
             </button> : <div></div>}
 
-            <button className="cursor-pointer p-4 w-32 bg-[#54F4D0] rounded-r-4xl text-[#000061]" onClick={() => handleClick((parseInt(currentPage) + 1).toString())}>
+            {props.nextPageContent !== 0 ? <button className="cursor-pointer p-4 w-32 bg-[#54F4D0] rounded-r-4xl text-[#000061]" onClick={() => handleClick((parseInt(currentPage) + 1).toString())}>
                 Next
-            </button>
+            </button> : <div></div>}
 
         </div>
     )
