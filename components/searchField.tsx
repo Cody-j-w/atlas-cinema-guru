@@ -39,13 +39,13 @@ export default function SearchField() {
         }
     }
     return (
-        <div className="flex w-full ms-4 justify-between">
+        <div className="flex md:flex-row flex-col w-full ms-4 md:justify-between items-center mb-4">
 
 
-            <form>
-                <div className="flex-col">
+            <form className="ms:justify-baseline justify-center">
+                <div className="flex-col md:justify-baseline justify-center">
                     <label>
-                        <p className="m-1">Search</p>
+                        <p className="m-1 md:text-start text-center">Search</p>
                         <input
                             id="query"
                             type="text"
@@ -56,7 +56,7 @@ export default function SearchField() {
                             }}
                         />
                     </label>
-                    <div className="flex">
+                    <div className="flex md:justify-baseline justify-center">
                         <div className="flex-col w-36 mt-3 me-7">
                             <label>
                                 <span className="m-1">Min Year</span>
@@ -84,7 +84,7 @@ export default function SearchField() {
                     </div>
                 </div>
             </form>
-            <div className="flex flex-wrap w-md me-4 mt-2">
+            <div className="flex flex-wrap w-md me-4 mt-2 md:justify-baseline justify-center">
                 <GenreButton genre="Romance" genres={genres} handler={handleGenres} />
                 <GenreButton genre="Horror" genres={genres} handler={handleGenres} />
                 <GenreButton genre="Drama" genres={genres} handler={handleGenres} />

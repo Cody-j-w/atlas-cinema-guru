@@ -5,7 +5,7 @@ export default async function UserInfo() {
     if (!session?.user) return null;
 
     return (
-        <div className="text-[#00003c]">
+        <div className="text-[#00003c] md:flex hidden">
             Welcome, {session.user.email}
         </div>
     )
