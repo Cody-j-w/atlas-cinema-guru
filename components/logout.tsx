@@ -9,7 +9,7 @@ export default function Logout() {
                 "use server"
                 await signOut()
             }}>
-            <button type="submit" className="flex items-center ms-4 text-[#00003c]">
+            <button type="submit" className="hidden md:flex items-center ms-4 text-[#00003c]">
                 <LogOut size={16} /> <p className="ms-2">Logout</p>
             </button>
         </form>
