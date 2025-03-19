@@ -18,7 +18,6 @@ export default async function Page(props: {
   const minYear = searchParams?.minYear || "0";
   const maxYear = searchParams?.maxYear || String(new Date().getFullYear());
   const query = searchParams?.query || "";
-  console.log(genres);
   return (
     <div className="flex flex-wrap items-center justify-center min-h-screen h-full w-full">
       <SearchField />
